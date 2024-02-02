@@ -1,0 +1,37 @@
+name: 001_MANet_prepare_dataset
+suffix: ~
+model: blind
+distortion: sr
+scale: 4
+gpu_ids: [0]
+kernel_size: 21
+code_length: 15
+sig_min: 0
+sig_max: 0
+sig: 3.0
+sig1: 6
+sig2: 1
+theta: 0.7853981633974483
+rate_iso: 0 # 1 for iso, 0 for aniso
+sv_mode: 3
+test_noise: False
+noise: 0
+
+datasets:
+  test1:
+    name: BSD100
+    mode: GT
+    dataroot_GT: ../datasets/BSDS100/HR
+    dataroot_LQ: ~
+
+network_G:
+  which_model_G: ~
+  in_nc: ~
+  out_nc: ~
+  nf: ~
+  nb: ~
+  upscale: 0
+#
+path:
+  strict_load: true
+  pretrain_model_G: ~
